@@ -232,4 +232,21 @@ void Shader::setMat4(const std::string &name, glm::mat4 value) const
 void Shader::setVec3(const std::string &name, glm::vec3 v) const
 {
     glUniform3fv(glGetUniformLocation(ID, name.c_str()),1,&v[0]);
+}
+
+void Shader::setVec4(const std::string &name, glm::vec4 v) const
+{
+    glUniform4fv(glGetUniformLocation(ID, name.c_str()),1,&v[0]);
  }
+ 
+ // Activates the Shader Program
+void Shader::Activate()
+{
+	glUseProgram(ID);
+}
+
+// Deletes the Shader Program
+void Shader::Delete()
+{
+	glDeleteProgram(ID);
+}

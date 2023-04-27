@@ -1,7 +1,7 @@
 #version 330 core
 out vec4 fragmentColor;
 
-in vec2 texCoord;
+in vec2 TexCoord;
 
 //notice the sampler
 uniform sampler2DMS screencapture;
@@ -13,8 +13,8 @@ void main(){
     int viewport_width = 800; 
     int viewport_height = 600;
     ivec2 vpCoords = ivec2(viewport_width, viewport_height);
-    vpCoords.x = int(vpCoords.x * texCoord.x); 
-    vpCoords.y = int(vpCoords.y * texCoord.y);
+    vpCoords.x = int(vpCoords.x * TexCoord.x); 
+    vpCoords.y = int(vpCoords.y * TexCoord.y);
 
 //do a simple average since this is just a demo
 	vec4 sample1 = texelFetch(screencapture, vpCoords, 0);
