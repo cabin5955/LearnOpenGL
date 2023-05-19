@@ -24,7 +24,7 @@ float lastTime_deferred = 0.0f;
 void mouse_callback_deferred(GLFWwindow *window, double xpos, double ypos);
 void processInput_deferred(GLFWwindow *window);
 
-int main()
+int main_deferred()
 {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
